@@ -45,6 +45,7 @@ mkdir TXT
 mv $newVar1 ./TXT
 mv $newVar2 ./TXT
 
+# rm ./newDir
 rm -rf newDir
 
 cd TXT
