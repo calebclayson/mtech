@@ -1,0 +1,27 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.container div {
+    background-color: aqua;
+    width: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .divtwo {
+        margin-top: 1em;
+    }
+}
