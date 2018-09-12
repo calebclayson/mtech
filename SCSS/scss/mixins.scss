@@ -1,0 +1,21 @@
+@mixin setbtn() {
+    background-color: gray;
+    color: white;
+    border: 1px solid transparent;
+    padding: .8em;
+    outline: none;
+}
+
+@mixin setinput($font) {
+    border: none;
+    padding: .5em;
+    font-family: $font;
+    font-size: $my-fontsize;
+    margin-right: 1em;
+}
+
+@mixin navitem($color) {
+    padding: $my-base-padding;
+    text-decoration: none;
+    color: $color;
+}

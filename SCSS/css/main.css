@@ -1,13 +1,26 @@
-marquee {
-  color: blue;
-  font-size: 50em;
-  text-align: center; }
-
 body {
   margin: 0;
-  padding: 0;
-  background-color: lightblue;
+  padding: 0; }
+
+.nav {
+  background-color: black;
+  padding: 1em;
   display: flex;
-  align-content: center;
-  justify-content: center;
-  height: 100%; }
+  justify-content: space-between;
+  align-items: center; }
+  .nav__items {
+    padding: 1em;
+    text-decoration: none;
+    color: white; }
+  .nav__input {
+    border: none;
+    padding: .5em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    margin-right: 1em; }
+  .nav__submit {
+    background-color: gray;
+    color: white;
+    border: 1px solid transparent;
+    padding: .8em;
+    outline: none; }

@@ -1,15 +1,4 @@
-marquee {
-    color: blue;
-    font-size: 50em;
-    text-align: center;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: lightblue;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    height: 100%;
-}
+@import 'variables';
+@import 'mixins';
+@import 'base.scss';
+@import 'navbar';
