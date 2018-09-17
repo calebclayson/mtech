@@ -1,0 +1,27 @@
+.navbar-collapse {
+	background-color: #70A8A2;
+	border-radius: 5px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #F0EAD2;
+}
+.navbar-default .navbar-nav > .active > a{
+	background-color: red;
+	color: #96BFB6;
+	font-weight: bold;
+}
+.active{
+	background-color: red;
+}
+.navbar-default .navbar-brand {
+    color: #0A1A27;
+    padding-left:30px;
+}
+.navbar-header {
+	background-color: #70A8A2;
+}
+
+.content {
+	height:500px;
+	line-height: 500px;
+}
