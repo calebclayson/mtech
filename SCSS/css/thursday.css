@@ -1,0 +1,45 @@
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+.btn, .actionbtn, .disabled {
+  padding: 12px 18px;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #0064FF;
+  color: #0064FF;
+  border-radius: 3px; }
+  .btn:focus, .actionbtn:focus, .disabled:focus {
+    outline: none; }
+  .btn:hover, .actionbtn:hover, .disabled:hover {
+    color: #015be2;
+    border: 1px solid #015be2; }
+
+.actionbtn {
+  color: #ffffff;
+  background-color: #0064FF; }
+  .actionbtn:hover {
+    background-color: #015be2;
+    color: #ffffff; }
+
+.disabled {
+  border: 1px solid #d4d1d1;
+  color: #fafafa;
+  background-color: #d4d1d1; }
+  .disabled:hover {
+    border: 1px solid #d4d1d1;
+    color: #fafafa; }
+
+.link {
+  color: #0064FF;
+  text-decoration: none; }
+
+.container {
+  padding: 1em;
+  border: 0.5px solid #d4d1d1;
+  border-radius: 4px; }
+  @media screen and (max-width: 1270px) {
+    .container {
+      justify-content: space-between; } }
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column; } }

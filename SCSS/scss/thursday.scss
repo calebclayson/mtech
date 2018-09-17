@@ -1,0 +1,71 @@
+$action-blue: #0064FF;
+$hover-action-blue: #015be2;
+$white: #ffffff;
+$disable-gray: #d4d1d1;
+$light-gray: #fafafa;
+$small: 600px;
+$large: 1270px;
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn {
+    padding: 12px 18px;
+    font-size: 14px;
+    background-color: $white;
+    border: 1px solid $action-blue;
+    color: $action-blue;
+    border-radius: 3px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        color: $hover-action-blue;
+        border: 1px solid $hover-action-blue;
+    }
+}
+
+.actionbtn {
+    @extend .btn;
+    color: $white;
+    // border: none;
+    background-color: $action-blue;
+
+    &:hover {
+        background-color: $hover-action-blue;
+        color: $white;
+    }
+}
+
+.disabled {
+    @extend .btn;
+    border: 1px solid $disable-gray;
+    color: $light-gray;
+    background-color: $disable-gray;
+
+    &:hover {
+        border: 1px solid $disable-gray;
+        color: $light-gray;
+    }
+}
+
+.link {
+    color: $action-blue;
+    text-decoration: none;
+}
+
+.container {
+    padding: 1em;
+    border: .5px solid $disable-gray;
+    border-radius: 4px;
+    @media screen and (max-width: $large) {
+        justify-content: space-between;
+        //padding: 5px;
+    }
+    @media screen and (max-width: $small) {
+        flex-direction: column;
+    }
+}
