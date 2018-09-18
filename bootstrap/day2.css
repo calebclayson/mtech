@@ -1,0 +1,44 @@
+body {
+    margin-bottom: 100px;
+}
+
+.galaxy-img {
+    max-height: 40vh;
+    object-fit: cover;
+}
+
+.content-container {
+    padding: 16px;
+}
+
+.btn-primary {
+    margin-top: 12px;
+}
+
+.row-card {
+    justify-content: space-around;
+}
+
+.fab {
+    font-size: 2em;
+}
+
+.project-form {
+    display: flex;
+}
+
+@media (max-width: 600px) {
+    .card {
+        margin: 1em auto;
+    }
+
+    .galaxy-img {
+        max-height: 20vh;
+    }
+}
+
+@media only print {
+    body {
+        color: blue;
+    }
+}
