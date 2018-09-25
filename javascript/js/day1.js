@@ -42,3 +42,12 @@ function combinename(fname, lname, middlename, nametitle){
 }
 
 alert(combinename(firstname, lastname, middlename, nametitle));
+
+var string = 'hey';
+var num = 6;
+var array = [one, two, three];
+var obj = {
+	one: string,
+	two: num,
+	three: array
+}
