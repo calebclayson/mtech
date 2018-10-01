@@ -1,0 +1,26 @@
+
+#cardcontainer {
+    width: 20vw;
+    margin: 0 auto;
+    border: 10px solid black;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+#name {
+    font-size: 2em;
+    padding: .5em;
+    text-align: center;
+}
+
+#occupation {
+    text-align: center;
+    padding: .2em;
+}
+
+#contact {
+    font-size: .8em;
+    padding-top: 1em;
+}
