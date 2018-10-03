@@ -52,3 +52,29 @@ let myprops = mirror.getProperties();
 let mymethods = mirror.getMethods();
 console.log(myprops);
 console.log(mymethods);
+
+function Engine(engine, make, model) {
+    this.engine = engine;
+    this.make = make;
+    this.model = model;
+}
+
+let char = {
+    name: 'caleb',
+    class: 'brawler',
+    health: 80,
+    modifier: 'strength',
+
+    eatfood: function(food) {
+        console.log(`${this.name} ate ${food}`);
+    },
+    attack: function(enemy) {
+        console.log(`${this.name} attacked ${enemy}`);
+    },
+    greet: function(saying) {
+        console.log(saying);
+    },
+    takeDamage: function(amount) {
+        this.health -= amount;
+    }
+}
