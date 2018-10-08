@@ -51,3 +51,27 @@ var obj = {
 	two: num,
 	three: array
 }
+
+let ary = ['a', 'c', 'd', 'hj', 'tyn', 't'];
+
+for (let index = ary.length -1; index > -1; index--) {
+	console.log(ary[index]);
+}
+
+ary.forEach(value => console.log(value));
+
+let myArray = ['a', 'ab', 'gt', 'jkm', 'lol'];
+
+function filterArray (array, fn) {
+	let newArray = [];
+	for(let i = 0; i < array.length; i++) {
+		if(fn(array[i])) {
+			newArray.push(array[i]);
+		}
+	}
+	return newArray;
+}
+
+let myFilteredArray = filterArray(myArray, element => {
+	return element.length > 2;
+})
