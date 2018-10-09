@@ -41,11 +41,11 @@ function combinename(fname, lname, middlename, nametitle){
 	return nametitle + " " + fname + " " + middlename + " " + lname;
 }
 
-alert(combinename(firstname, lastname, middlename, nametitle));
+// alert(combinename(firstname, lastname, middlename, nametitle));
 
 var string = 'hey';
 var num = 6;
-var array = [one, two, three];
+var array = ['one', 'two', 'three'];
 var obj = {
 	one: string,
 	two: num,
@@ -55,10 +55,10 @@ var obj = {
 let ary = ['a', 'c', 'd', 'hj', 'tyn', 't'];
 
 for (let index = ary.length -1; index > -1; index--) {
-	console.log(ary[index]);
+	// console.log(ary[index]);
 }
 
-ary.forEach(value => console.log(value));
+// ary.forEach(value => console.log(value));
 
 let myArray = ['a', 'ab', 'gt', 'jkm', 'lol'];
 
@@ -75,3 +75,21 @@ function filterArray (array, fn) {
 let myFilteredArray = filterArray(myArray, element => {
 	return element.length > 2;
 })
+
+class formatDate extends Date {
+	constructor(datestr) {
+		super(datestr);
+	}
+
+	getFormattedDate () {
+		let months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+		let theDay = this.getDate();
+		let theMonth = months[this.getMonth()];
+		let theYear = this.getFullYear();
+
+		return `${theDay} ${theMonth} ${theYear}`;
+	}
+}
+
+console.log(new formatDate('August 19, 1975').getFormattedDate());
