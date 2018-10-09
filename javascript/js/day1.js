@@ -76,6 +76,14 @@ let myFilteredArray = filterArray(myArray, element => {
 	return element.length > 2;
 })
 
+function purchase(myprice) {
+	var price = myprice;
+
+	if(price.discount === true) {
+		let discount = price.amount -1;
+	}
+}
+
 class formatDate extends Date {
 	constructor(datestr) {
 		super(datestr);
