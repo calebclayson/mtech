@@ -26,3 +26,23 @@ function fall () {
         }
     }
 }
+
+class Data {
+    static saveList (id, list) {
+        let listString = JSON.stringify(list);
+        localStorage.setItem(id, listString);
+    }
+
+    static getList (id) {
+        let list = localStorage.getItem(id);
+        return JSON.parse(list);
+    }
+
+    static removeList (id) {
+
+    }
+}
+
+Data.saveList('stuff', ['pie', 'apples', 1]);
+
+console.log(Data.getList('stuff'));
