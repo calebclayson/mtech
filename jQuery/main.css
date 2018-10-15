@@ -1,3 +1,19 @@
 .graytext {
     color: gray;
 }
+
+.row {
+    position: relative;
+    width: 200px;
+    border: 1px solid #dadfea;
+    padding: 12px 18px;
+}
+
+.trashcan {
+    padding-right: 10px;
+    color: red;
+}
+
+.handle {
+    padding-right: .5em;
+}

@@ -1,31 +1,38 @@
-let bob = function(){};
-
-$(bob); // references the variable bob
-
-$('.container').find('div').css('color','blue');
+$('.additem').click(additem);
 
 $('.myinput').on('keydown', function(event){
-    console.log(event.which);
+    // console.log(event.which);
     if(event.which === 13) {
         additem();
     }
-})
+});
 
+$('.container').sortable({
+    handle: ".handle"
+});
 
 function additem() {
     let myname = $('.myinput').val();
-    $('.container').append(`<div class="row"><span contenteditable="true">${myname}<span><i class="trashcan fas fa-trash-alt"></i></div>`);
+    $('.container').append(`<div class="row"><i class="handle fas fa-arrows-alt"></i><i class="trashcan fas fa-trash-alt"></i><span contenteditable="true">${myname}<span></div>`);
     $('.myinput').val('');
     let numchildren = $('.container').children().length;
     console.log(numchildren);
     $('.trashcan').click(function(){
-        $(this).parent().parent().parent().remove();
-    })
+        $(this).parent().animate({
+            opacity: 0,
+            left: "+=50"
+        }, 800, function(){
+            $(this).remove();
+        });
+    });
 }
 
-function clearlist () {
-    $('.row').remove();
+function clearlist() {
+    $('.container').html('');
 }
+
+$('.clearlist').click(clearlist);
+
 
 // $('.row').css('color','blue');
 $('.row').addClass('graytext');
