@@ -1,90 +1,48 @@
 let deckId;
 
-function loadDeck() {
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = () => {
-        if (httpRequest.readyState == XMLHttpRequest.DONE) {
-            let response = JSON.parse(httpRequest.response)
-            if (response.success) {
-                deckId = response.deck_id
+function getDeck() {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: 'https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1',
+            type: 'GET',
+            success: response => {
+                resolve(response);
+            },
+            error: error => {
+                reject(error);
             }
-        }
-    }
-
-    httpRequest.open('GET', `https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`);
-    httpRequest.send();
+        });
+    });
 }
 
-function addOneCardP1() {
-    let cardDrawRequest = new XMLHttpRequest();
-    cardDrawRequest.onreadystatechange = () => {
-        if (cardDrawRequest.readyState == XMLHttpRequest.DONE) {
-            let response = JSON.parse(cardDrawRequest.response)
-            if (response.success) {
-                let card = `
-                    <div class="card">
-                        <img class="card-image" src="${response.cards[0].image}"/>
-                    </div>
-                `;
-                document.getElementById('card-container-one').innerHTML += card;
+function getCards(deckId, cardAmount) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${cardAmount}`,
+            type: 'GET',
+            success: response => {
+                resolve(response);
+            },
+            error: error => {
+                reject(error);
             }
-        }
-    }
-
-    cardDrawRequest.open('GET', `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`);
-    cardDrawRequest.send();
+        });
+    });
 }
 
-function addOneCardP2() {
-    let cardDrawRequest = new XMLHttpRequest();
-    cardDrawRequest.onreadystatechange = () => {
-        if (cardDrawRequest.readyState == XMLHttpRequest.DONE) {
-            let response = JSON.parse(cardDrawRequest.response)
-            if (response.success) {
-                let card2 = `
-                    <div class="card2">
-                        <img class="card-image" src="${response.cards[0].image}"/>
-                    </div>
-                `;
-                document.getElementById('card-container-two').innerHTML += card2;
-            }
-        }
-    }
+let deckPromise = getDeck();
 
-    cardDrawRequest.open('GET', `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`);
-    cardDrawRequest.send();
-}
+deckPromise.then(data => {
+    getCards(data.deck_id, 2).then(cardData => {
+        document.getElementById('card1').src = cardData.cards[0].image;
+        document.getElementById('card2').src = cardData.cards[1].image;
+    });
+});
 
-function getTwoCards() {
-    let cardDrawRequest = new XMLHttpRequest();
-    cardDrawRequest.onreadystatechange = () => {
-        if (cardDrawRequest.readyState == XMLHttpRequest.DONE) {
-            let response = JSON.parse(cardDrawRequest.response)
-            if (response.success) {
-                let card = `
-                    <div class="card">
-                        <img class="card-image" src="${response.cards[0].image}"/>
-                    </div>
-                    <div class="card">
-                        <img class="card-image" src="${response.cards[1].image}"/>
-                    </div>
-                `;
-                let card2 = `
-                    <div class="card2">
-                        <img class="card-image" src="${response.cards[2].image}"/>
-                    </div>
-                    <div class="card2">
-                        <img class="card-image" src="${response.cards[3].image}"/>
-                    </div>
-                `;
-                document.getElementById('card-container-one').innerHTML += card;
-                document.getElementById('card-container-two').innerHTML += card2;
-            }
-            $('.drawCard').css('display', 'none');
-            $('.addCard').css('display', 'block');
-        }
-    }
-
-    cardDrawRequest.open('GET', `https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=4`);
-    cardDrawRequest.send();
+function hit (e) {
+    deckPromise.then(data => {
+        getCards(data.deck_id, 1).then(cardData => {
+            $(e.asdfasdf).append(`<img src=${cardData.cards[0].image}>`);
+        })
+    })
 }

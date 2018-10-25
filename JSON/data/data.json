@@ -1,0 +1,24 @@
+{
+    "categories":[
+        {
+            "name": "science",
+            "season": "spring",
+            "description": "filler text etc. pretend there is more here"
+        },
+        {
+            "name": "technology",
+            "season": "fall",
+            "description": "filler text etc. pretend there is more here"
+        },
+        {
+            "name": "health",
+            "season": "summer",
+            "description": "filler text etc. pretend there is more here"
+        },
+        {  
+            "name": "culinary",
+            "season": "spring",
+            "description": "filler text etc. pretend there is more here"
+        }
+    ]
+}
