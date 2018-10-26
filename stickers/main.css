@@ -1,0 +1,90 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sigmar One', 'sans-serif';
+}
+.container {
+    height: 450px;
+    display: flex;
+}
+.ui-icon {
+    display: none !important;
+}
+.sticker {
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    cursor: pointer;
+}
+.sticker:hover {
+    border: 1px dashed #fff;
+}
+.frank {
+    background-image: url('./img/frank.png');
+}
+.bat {
+    background-image: url('./img/bat.png');
+}
+.hand {
+    background-image: url('./img/hand.png');
+}
+.pumpkin {
+    background-image: url('./img/pumpkin.png');
+}
+.skull {
+    background-image: url('./img/skull.png');
+}
+.toolbar {
+    border: 1px solid #dadfea;
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    align-items: center;
+    height: 109.4%;
+}
+.toolbar i {
+    cursor: pointer;
+    padding-top: 15px;
+}
+
+.card {
+    background-color: coral;
+    width: 450px;
+    height: 100%;
+    position: relative;
+}
+
+.actions {
+    border: 1px solid #dadfea;
+    padding: .5em;
+}
+
+.actions i {
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.text {
+    color: white;
+    cursor: pointer;
+    display: inline;
+    font-size: 1.2em;
+    position: absolute;
+}
+
+.text:hover {
+    border: 1px dashed #fff;
+}
+
+.myActive {
+    background-color: rgba(255,255,255,.4);
+}
