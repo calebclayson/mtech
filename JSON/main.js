@@ -30,3 +30,27 @@ function displayDataToPage() {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+function within1and20 (num) {
+    if(num>=1 && num<=20) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function fiveLong (str) {
+    if(str.length === 5) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(fiveLong('caleb'));
+console.log(fiveLong(false));
+console.log(fiveLong('toolong'));
+
+console.log(within1and20(2));
+console.log(within1and20('thing'));
+console.log(within1and20(50));
