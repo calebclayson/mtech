@@ -8,7 +8,7 @@
 //     }
 
 //     contains(str) {
-        
+
 //     }
 
 //     remove(str) {
@@ -70,14 +70,18 @@ function lList() {
 
 function insert(newE, item) {
     let newNode = new Node(newE);
-    let current = this.find(item);
-    newNode.next = current.next;
-    current.next = newNode;
+    if (item > newNode) {
+        item = item.next;
+    } else {
+        let current = this.find(item);
+        newNode.next = current.next;
+        current.next = newNode;
+    }
 }
 
 function find(item) {
     let currNode = this.head;
-    while(currNode.element != item) {
+    while (currNode.element != item) {
         currNode = currNode.next;
     }
     return currNode;
@@ -85,14 +89,14 @@ function find(item) {
 
 function remove(item) {
     let prevNode = this.findPrevious(item);
-    if(!(prevNode.next === null)){
+    if (!(prevNode.next === null)) {
         prevNode.next = prevNode.next.next;
     }
 }
 
 function findPrevious(item) {
     let currNode = this.head;
-    while(!(currNode.next === null) && (currNode.next.element != item)) {
+    while (!(currNode.next === null) && (currNode.next.element != item)) {
         currNode = currNode.next;
     }
     return currNode;

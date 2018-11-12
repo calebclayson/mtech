@@ -30,6 +30,16 @@ function Kirby() {
     this.velX = 0;
     this.maxSpeed = 6;
     this.friction = .93;
+    this._jump = 5.8;
+    this.jumpcount = 3;
+
+    this.jump = function(){
+        this.stop = false;
+        if(this.jumpcount > 0) {
+            this.velocity = -this._jump;
+            this.jumpcount--;
+        }
+    }
 
     this.update = function() {
         let n = 10;
@@ -45,6 +55,7 @@ function Kirby() {
 
         if(this.y >= 350) {
             this.stop = true;
+            this.land(350);
         }
 
         if(this.direction === 'left') {
@@ -59,6 +70,12 @@ function Kirby() {
         }
         this.velX *= this.friction;
         this.x += this.velX;
+    }
+
+    this.land = function(place) {
+        this.y = place;
+        this.jumpcount = 3;
+        this.velocity = this._jump;
     }
 
     this.draw = function() {
@@ -91,6 +108,9 @@ function loadGraphics() {
 
 function mykeypress(evt) {
     switch(evt.keyCode) {
+        case 32:
+            myhero.jump();
+            break;
         case 37:
             myhero.direction = 'left';
             break;
