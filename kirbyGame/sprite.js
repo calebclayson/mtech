@@ -1,4 +1,5 @@
 let kirby;
+let coin;
 
 function Sprite(img, x, y, width, height) {
     this.img = img;
@@ -25,4 +26,5 @@ function initSprites(img) {
         new Sprite(img, 237, 63, 27, 33),
         new Sprite(img, 266, 63, 27, 33),
     ];
+    coin = new Sprite(img, 207, 6, 18, 25);
 }

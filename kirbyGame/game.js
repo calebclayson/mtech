@@ -5,16 +5,69 @@ let height = 400;
 let frames = 0;
 let myfill = "#8BE4FD";
 let myhero;
+let coinBag;
 
 (function main(){
     console.log("things");
     canvasSetup();
     document.getElementById('canvasBox').appendChild(canvas);
     myhero = new Kirby();
+    coinBag = new CoinCollection;
     loadGraphics();
     document.addEventListener('keydown', mykeypress);
     document.addEventListener('keyup', unpress);
+    levelStart();
 })();
+
+function CoinCollection() {
+    this.collection = [];
+    this.add = function(coinX, coinY) {
+        this.collection.push(new Coin(coinX, coinY));
+    }
+    this.update = function () {
+        for(let c = 0; c < this.collection.length; c++) {
+            let activeCoin = this.collection[c];
+            activeCoin.checkHit();
+            if(activeCoin.checkHit()) {
+                this.collection.splice(c, 1);
+            }
+        }
+    }
+    this.draw = function() {
+        for(let i = 0; i < this.collection.length; i++) {
+            let myCoin = this.collection[i];
+            myCoin.draw();
+        }
+    }
+}
+
+function Coin (coinX, coinY) {
+    this.x = coinX;
+    this.y = coinY;
+    this.width = 25;
+    this.height = 25;
+
+    this.checkHit = function() {
+        let top = this.y;
+        let bottom = this.y + this.height;
+        let left = this.x;
+        let right = this.x + this.width;
+
+        let htop = myhero.y;
+        let hbottom = myhero.y + myhero.height;
+        let hleft = myhero.x;
+        let hright = myhero.x + myhero.width;
+
+        if(hleft < right && hright > left && htop < bottom && hbottom > top) {
+            // console.log('hit detected');
+            return true;
+        }
+    }
+
+    this.draw = function() {
+        coin.draw(renderingContext, this.x, this.y);
+    }
+}
 
 function Kirby() {
     this.x = 140;
@@ -70,6 +123,10 @@ function Kirby() {
         }
         this.velX *= this.friction;
         this.x += this.velX;
+
+        if(this.x < 0) {
+            this.x *= -this.friction;
+        }
     }
 
     this.land = function(place) {
@@ -85,6 +142,12 @@ function Kirby() {
 
         renderingContext.restore();
     }
+}
+
+function levelStart() {
+    coinBag.add(200, 200);
+    coinBag.add(100, 300);
+    coinBag.add(150, 350);
 }
 
 function canvasSetup() {
@@ -133,9 +196,12 @@ function gameLoop(){
 function update() {
     frames++;
     myhero.update();
+    coinBag.update();
 }
 
+//draw everything in this method
 function render() {
     renderingContext.fillRect(0, 0, width, height);
+    coinBag.draw();
     myhero.draw();
 }
