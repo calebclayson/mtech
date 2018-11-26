@@ -1,47 +1,43 @@
-#typeelectric {
-    color:yellow;
-}
-#typenormal {
-    color:lightgray;
-}
-#typefire {
-    color:red;
-}
-#typewater {
-    color:cadetblue;
-}
-#typegrass {
-    color:green;
-}
-#typepsychic {
-    color:magenta;
-}
-#typefighting {
-    color:brown;
-}
-#typeflying {
-    color:lightblue;
-}
-#typebug {
-    color:greenyellow;
-}
-#typesteel {
-    color:slategrey;
-}
-
 body {
-    background-color: black;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 3em;
 }
 
 .pokedex{
-    margin: 2em;
+    margin: 5%;
+    height:150px;
+    width:150px;
+    padding:30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: black;
+    border:0px solid black;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.name {
+    flex:1;
 }
 
 .window {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selectors{
+    display:flex;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.search{
+    width:300px;
+}
+.art{
+    width:100px;
 }

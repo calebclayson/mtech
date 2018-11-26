@@ -1,17 +1,41 @@
 import {pokemon} from "./pokemon.js";
-import {pokemon2} from "./pokemon2.js";
-
-console.log(pokemon2);
 
 (function(){
-    displaypokemon();
+    displayPokemon();
 })();
 
-function displaypokemon(){
-    for(let i = 0; i < pokemon.length; i++){
-        $(".window").append(`<div class="pokedex" id="type${pokemon[i].type}">${pokemon[i].name}<img class="img" src="http://www.pokestadium.com/sprites/xy/${pokemon[i].name}.gif" /></div>`)
+window.runSomething = function (val){
+    if(val.value == "default"){
+        displayPokemon();
+    } else if(val.value == "art"){
+        displayArtPokemon();
+    } else if(val.value == "shiny"){
+        displayShinyPokemon();
     }
-    for(let x = 0; x < pokemon2.length; x++){
-        $(".window").append(`<div class="pokedex" id="type${pokemon2[x].type}">${pokemon2[x].name}<img class="img" src="http://www.pokestadium.com/sprites/xy/${pokemon2[x].name}.gif" /></div>`)
+}
+window.searchforpokemon = function (input){
+    let findthis = input.value;
+    $('.window').html('');
+
+}
+
+function displayPokemon(){
+    $('.window').html('');
+    for(let i = 0; i < pokemon.length; i++){
+        $(".window").append(`<div class="pokedex" id="${pokemon[i].toLowerCase()} ${i}" ><span class="name">${pokemon[i]} #${i + 1}</span><img class="img" src="http://www.pokestadium.com/sprites/xy/${pokemon[i].toLowerCase()}.gif" /></div>`)
+    }
+}
+
+function displayArtPokemon(){
+    $('.window').html('');
+    for(let i = 0; i < pokemon.length; i++){
+        $(".window").append(`<div class="pokedex" ><span class="name">${pokemon[i]} #${i + 1}</span><img class="art" src="http://www.pokestadium.com/assets/img/sprites/official-art/${pokemon[i].toLowerCase()}.png" onerror="this.src='http://www.pokestadium.com/sprites/xy/${pokemon[i].toLowerCase()}.gif'"/></div>`)
+    }
+}
+
+function displayShinyPokemon(){
+    $('.window').html('');
+    for(let i = 0; i < pokemon.length; i++){
+        $(".window").append(`<div class="pokedex" ><span class="name">${pokemon[i]} #${i + 1}</span><img class="img" src="http://www.pokestadium.com/sprites/xy/shiny/${pokemon[i].toLowerCase()}.gif" onerror="this.src='http://www.pokestadium.com/sprites/xy/${pokemon[i].toLowerCase()}.gif'"/></div>`)
     }
 }
