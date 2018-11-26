@@ -1,0 +1,47 @@
+#typeelectric {
+    color:yellow;
+}
+#typenormal {
+    color:lightgray;
+}
+#typefire {
+    color:red;
+}
+#typewater {
+    color:cadetblue;
+}
+#typegrass {
+    color:green;
+}
+#typepsychic {
+    color:magenta;
+}
+#typefighting {
+    color:brown;
+}
+#typeflying {
+    color:lightblue;
+}
+#typebug {
+    color:greenyellow;
+}
+#typesteel {
+    color:slategrey;
+}
+
+body {
+    background-color: black;
+}
+
+.pokedex{
+    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.window {
+    display: flex;
+    flex-wrap: wrap;
+}
