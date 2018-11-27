@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Naughty or Nice List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="contain">
+        <h1>Are you naughty or nice?</h1>
+        <div class="input-container">
+            <div>Enter your name</div>
+            <input onchange="naughtyNice(this)" type="text" class="input"/>
+        </div>
+        <div class="showhide"><h2><span class="name"></span> is <span class="result"></span></h2></div>
+    </div>    
+</body>
+</html>

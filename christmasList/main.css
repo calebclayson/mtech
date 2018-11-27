@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass+Mono');
+
+textarea, select, input, button { outline: none; }
+
+* {
+    font-family: 'Overpass Mono', monospace;
+}
+
+#naughty {
+    color:red;
+}
+
+#nice {
+    color:green;
+}
+
+.showhide {
+    display:none;
+}
+
+.contain {
+    height:300px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow:column;
+}
+
+.input {
+    width:500px;
+    height:50px;
+    font-size:30px;
+    padding: .5em;
+    outline: 1px solid whitesmoke;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.input:focus {
+    outline: 1px solid black;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
