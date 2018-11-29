@@ -3,16 +3,16 @@ let horse = new Audio('horse.mp3');
 let name;
 
 function naughtyNice(e){
-    let randomNum = Math.floor(Math.random()*10);
-    name = $(e).val();
-    $('.name').html(name);
-    $('.input-container').slideUp('fast');
-    $('.showhide').slideDown('fast');
+        let randomNum = Math.floor(Math.random()*10);
+        name = $(e).val();
+        $('.name').html(name);
+        $('.input-container').slideUp('fast');
+        $('.showhide').slideDown('fast');
     if(randomNum < 5) {
         $('.result').html('naughty');
         $('.result').attr('id', 'naughty');
         horse.play();
-        $('.result').effect("shake");
+        $('.result').delay(300).effect("shake");
     } else {
         $('.result').html('nice');
         $('.result').attr('id', 'nice');

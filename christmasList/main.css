@@ -19,7 +19,7 @@ textarea, select, input, button { outline: none; }
 }
 
 .contain {
-    height:300px;
+    height:500px;
     display:flex;
     justify-content: space-around;
     align-items: center;
