@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pokemon Ordering</title>
-    <link href="./favicon.PNG" rel="shortcut icon"/>
+    <link href="./favicon.PNG" rel="shortcut icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    
+
     <script defer type="module" src="main.js"></script>
 </head>
+
 <body>
     <div class="selectors">
-        <select class="type" onchange="runSomething(this)">
-            <option value="default">Normal</option>
-            <option value="shiny">Shiny</option>
-            <option value="art">Art</option>
-        </select>
-        <input class="search" onchange="searchforpokemon(this)"/>
+        <input class="search" onchange="searchforpokemon()" />
+        <div class="custom-select" style="width:100px;" onclick="runSomething()">
+            <select class="type" onchange="runSomething(this)">
+                <option value="default">Normal</option>
+                <option value="shiny">Shiny</option>
+                <option value="art">Art</option>
+            </select>
+        </div>
     </div>
     <div class="window">
 
 
     </div>
-    <p style="color: white">Made by Berkley and Caleb</p>
+    <p class="creds">Made by Berkley and Caleb. Credit to Pokemon Stadium for sprites and art. Credit to W3Schools for custom select.</p>
 </body>
+
 </html>
