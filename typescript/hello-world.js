@@ -33,4 +33,4 @@ function getBiographyBooks() {
     books.filter(function (book) { return book.category == Category.Biography; });
 }
 console.log(greeter.greet());
-console.log(harryPotter.name, Category[harryPotter.category]);
+console.log(Category[harryPotter.category]);
