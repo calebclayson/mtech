@@ -1,7 +1,7 @@
 import {pokemon} from "./pokemon.js";
 
 window.list =  [];
-window.type = "default";
+window.type = "normal";
 
 (function(){
     displayPokemon();
@@ -9,7 +9,7 @@ window.type = "default";
 
 window.runSomething = function (){
     if($('.select-selected').html() == "Normal"){
-        window.type = "default";
+        window.type = "normal";
         displayPokemon();
     } else if($('.select-selected').html() == "Art"){
         window.type = "art";
@@ -28,15 +28,12 @@ window.searchforpokemon = function (){
     for(let s = 0; s < pokemon.length; s++){
         if(pokemon[s].toLowerCase().includes(findthis)){
             window.list.push(pokemon[s]);
-        } 
-        
+        }
     }
     if(list.length < 1){
             window.type = "undefined";
     }
-
     displaySearched();
-
 }
 
 function displayPokemon(){
@@ -61,7 +58,7 @@ function displayShinyPokemon(){
 }
 
 function displaySearched(){
-    if(window.type == "default"){
+    if(window.type == "normal"){
         for(let i = 0; i < window.list.length; i++){
             $(".window").append(`<div class="pokedex" ><span class="name">${window.list[i]} #${pokemon.indexOf(window.list[i]) + 1}</span><img class="img" src="http://www.pokestadium.com/sprites/xy/${window.list[i].toLowerCase()}.gif" onerror="this.src='http://www.pokestadium.com/sprites/xy/${window.list[i].toLowerCase()}.gif'"/></div>`)
         }
@@ -75,8 +72,10 @@ function displaySearched(){
         for(let i = 0; i < window.list.length; i++){
             $(".window").append(`<div class="pokedex" ><span class="name">${window.list[i]} #${pokemon.indexOf(window.list[i]) + 1}</span><img class="img" src="http://www.pokestadium.com/sprites/xy/shiny/${window.list[i].toLowerCase()}.gif" onerror="this.src='http://www.pokestadium.com/sprites/xy/${window.list[i].toLowerCase()}.gif'"/></div>`)
         }
-    } else if(window.type == "undefined") {
+    }
+    else if(window.type == "undefined") {
         $(".window").append("<div class='undefined'>Not Found</div>");
+        window.type = $('.select-selected').html().toLowerCase();
     }
 }
 
