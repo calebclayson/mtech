@@ -121,12 +121,17 @@ body {
 
 .img {
     height: 4.5em;
-    position:absolute;
     align-self: center;
     justify-self: center;
-    
 }
 
 .showhide{
     display:none;
+}
+
+.name-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
