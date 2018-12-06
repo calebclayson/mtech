@@ -1,0 +1,132 @@
+body {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    /* padding: 3em; */
+}
+
+.pokedex{
+    margin: 5%;
+    height:150px;
+    width:150px;
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border:0px solid black;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.name {
+    flex:1;
+}
+
+.window {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selectors{
+    display:flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    padding-top: 4em;
+}
+
+.search{
+    width:300px;
+}
+.art{
+    width:100px;
+}
+
+.undefined {
+    padding: 2em;
+    font-size: 3em;
+}
+
+.creds {
+    margin: 0;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    font-size: .2em;
+}
+
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: #1a0000;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+.select-items {
+    position: absolute;
+    background-color: #1a0000;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search {
+    padding: .9em;
+    margin-right: 1.5em;
+    outline: none
+}
+
+.img {
+    height: 4.5em;
+    position:absolute;
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.showhide{
+    display:none;
+}
