@@ -39,7 +39,7 @@ $.ajax({
             $('.window').html('');
             for (let i = 0; i < pokemon.length; i++) {
                 $(".window").append(`
-                <div class="pokedex" onmouseover="addinfo(this)" id="${pokemon[i].name.toLowerCase()} ${i}" onmouseleave="hideinfo(this)">
+                <div class="pokedex" onclick="addinfo(this)" id="${pokemon[i].name.toLowerCase()} ${i}" onmouseleave="hideinfo(this)">
                     <div class="name-img">
                         <span class="name">${pokemon[i].name} #${i + 1}</span>
                         <img class="img" id="${i}" src="https://img.pokemondb.net/artwork/large/${pokemon[i].name.toLowerCase()}.jpg" />
@@ -61,7 +61,7 @@ $.ajax({
         function displaySearched() {
             for (let i = 0; i < list.length; i++) {
                 $(".window").append(`
-                <div class="pokedex" id="${pokemon[i].name.toLowerCase()} #${pokemon.indexOf(list[i]) + 1}" onmouseover="addinfo(this)" onmouseleave="hideinfo(this)">
+                <div class="pokedex" id="${pokemon[i].name.toLowerCase()} #${pokemon.indexOf(list[i]) + 1}" onclick="addinfo(this)" onmouseleave="hideinfo(this)">
                     <div class="name-img">
                         <span class="name">${list[i].name} #${pokemon.indexOf(list[i]) + 1}</span>
                         <img id="${i}" class="img" src="https://img.pokemondb.net/artwork/large/${list[i].name.toLowerCase()}.jpg"/>
@@ -91,7 +91,7 @@ $.ajax({
 
         hideinfo = function (thiscard) {
             $(thiscard).find('.showhide').hide();
-            $(thiscard).css('height', '150px').fadeIn("slow");;
+            $(thiscard).css('height', '150px').fadeIn("slow");; //mabe change this to a change in class instead of setting height and width in javascript?
             $(thiscard).css('width', '150px').fadeIn("slow");;
         }
     }
