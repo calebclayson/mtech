@@ -4,19 +4,22 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SampleComponent } from './sample/sample.component';
-import { SampleTwoComponent } from './sample-two/sample-two.component';
-import { SampleThreeComponent } from './sample-three/sample-three.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatIconModule, MatToolbarModule, MatCardModule} from "@angular/material";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SampleComponent,
-    SampleTwoComponent,
-    SampleThreeComponent
+    SampleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
