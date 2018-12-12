@@ -13,7 +13,7 @@
 
   <mat-list>
     <mat-list-item *ngFor="let character of characterArray">
-      <img mat-list-avatar src="{{character.img}}"/>
+      <img mat-list-avatar [src]="character.img"/>
       <h3 mat-line>{{character.name}}</h3>
       <div mat-line>
         <span>{{character.gender}}</span>

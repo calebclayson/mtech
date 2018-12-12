@@ -64,21 +64,31 @@ function getHouseAddressesByDwellingType(
         .map((house: House) => house.address);
 }
 
+function logHouseAddresses(addressArray): void {
+    for(let i = 0; i < addressArray.length; i++) {
+        console.log(addressArray[i]);
+    }
+}
+
 abstract class Person {
     name: string;
     email: string;
     phoneNumber: string;
     dob: Date;
 }
+
 class Property {
     address: string;
 }
+
 class PropertyManager extends Person {
     properties: Property[];
 }
+
 class Owner extends Person {
     properties: Property[];
 }
+
 class Renter extends Person {
     property: Property;
 }
