@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SampleComponent } from './sample/sample.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatIconModule, MatToolbarModule, MatCardModule} from "@angular/material";
+import {MatIconModule, MatToolbarModule, MatCardModule, MatSidenavModule, MatFormFieldModule, MatListModule, MatInputModule, MatButtonModule} from "@angular/material";
+import { CharacterListComponent } from './character-list/character-list.component';
+import { SidenavContentComponent } from './sidenav-content/sidenav-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SampleComponent
+    CharacterListComponent,
+    SidenavContentComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +21,12 @@ import {MatIconModule, MatToolbarModule, MatCardModule} from "@angular/material"
     BrowserAnimationsModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

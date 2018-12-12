@@ -1,3 +1,12 @@
-<cbc-sample></cbc-sample>
+<mat-toolbar color="primary">Star Wars App</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav mode="side" opened>
+        <cbc-character-list></cbc-character-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <cbc-sidenav-content></cbc-sidenav-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 
 <router-outlet></router-outlet>
